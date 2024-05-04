@@ -9,30 +9,10 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotCard({bot, botsArmy, setBotsArmy }) {
-
-  // Adding bot Army 
-  function handleAddArmy(bot){
-    setBotsArmy([...botsArmy, bot])
-    console.log("bsdbbsdf");
-  }
-  // Deleting Army
-  function handleDelete(id){
-    fetch(`http://localhost:8002/bots/${id}`,{
-      method : "DELETE"})
-      .then((response)=> response.json())
-      .then(()=>{
-        alert("Deleted Successfuly")
-      })
-  }
-
+function BotArmyCard({ bot, onRelease }) {
   return (
     <div className="ui column">
-      <div
-        className="ui card"
-        key={bot.id}
-        onClick={() => handleAddArmy(bot)}>
-
+      <div className="ui card" key={bot.id} onClick={() => onRelease(bot.id)}>
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
         </div>
@@ -50,7 +30,6 @@ function BotCard({bot, botsArmy, setBotsArmy }) {
             <i className="icon heartbeat" />
             {bot.health}
           </span>
-
           <span>
             <i className="icon lightning" />
             {bot.damage}
@@ -59,21 +38,10 @@ function BotCard({bot, botsArmy, setBotsArmy }) {
             <i className="icon shield" />
             {bot.armor}
           </span>
-          <span>
-            <div className="ui center aligned segment basic">
-              <button
-                className="ui mini red button"
-                onClick={() =>handleDelete(bot.id)
-                }                
-              >
-                x
-              </button>
-            </div>
-          </span>
         </div>
       </div>
     </div>
   );
 }
 
-export default BotCard;
+export default BotArmyCard;
