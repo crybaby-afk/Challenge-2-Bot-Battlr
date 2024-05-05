@@ -34,7 +34,7 @@ function handleAddArmy(bot) {
 
   // Deleting bot
   function handleDelete(id) {
-    fetch(`http://localhost:8002/bots/${id}`, {
+    fetch(`https://challenge-2-bot-battlr.onrender.com/bots/${id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())

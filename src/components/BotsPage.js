@@ -8,12 +8,12 @@ function BotsPage() {
   const [onDelete, setOnDelete] = useState(false);
 
   useEffect(() => {
-    
+
     // Load bots army from local storage
     const storedBotsArmy = JSON.parse(localStorage.getItem("botsArmy")) || [];
     setBotsArmy(storedBotsArmy);
 
-    fetch("http://localhost:8002/bots")
+    fetch("https://challenge-2-bot-battlr.onrender.com/bots")
       .then((res) => res.json())
       .then((data) => setBots(data))
       .catch((error) => console.error("Error fetching bots:", error));
