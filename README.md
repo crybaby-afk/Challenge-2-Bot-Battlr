@@ -87,3 +87,16 @@ As a user, I should be able to:
   `SortBar`.
 - Only enlist **one** bot from each `bot_class`. The classes are
   `["Support", "Medic", "Assault", "Defender", "Captain", "Witch"]`.
+
+## Technologies used
+   
+    - REACT  
+    - Json
+
+## Support and contact details
+    - email :: raddamestonui48@gmail.com
+    - phone :: +254717771461
+
+### License
+*Licenced under the MIT Licence
+Copyright (c) 2023 **Raddames Tonui
